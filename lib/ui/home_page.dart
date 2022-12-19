@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_task/resources/app_strings.dart';
-import 'package:test_task/utils/color_generator_utils.dart';
+import 'package:test_task/utils/color_generator.dart';
 
 /// Home Page with random color generator
 class HomePage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   void _setRandomColor() {
     setState(() {
-      backgroundColor = generateRandomColor();
+      backgroundColor = generateColor();
     });
   }
 
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       onTap: _setRandomColor,
       child: Scaffold(
-        backgroundColor: backgroundColor?.withOpacity(1),
+        backgroundColor: backgroundColor,
         body: const Center(
           child: Text(AppStrings.heyThere),
         ),

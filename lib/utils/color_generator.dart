@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:test_task/resources/app_constants.dart';
 
 /// Random color generator
-Color generateRandomColor() {
+Color generateColor() {
   return Color.fromRGBO(
-    _randomChannelValue(),
-    _randomChannelValue(),
-    _randomChannelValue(),
+    _generateChannelValue(),
+    _generateChannelValue(),
+    _generateChannelValue(),
     1,
   );
 }
 
-int _randomChannelValue() {
+int _generateChannelValue() {
   return Random().nextInt(AppConstants.maxChannelValue);
 }
